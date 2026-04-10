@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #F84565;
+    --color-primary-dull: #D63854;
+}
+
+/* Force the root and body to be the deep dark navy */
+html, body, #root {
+  background-color: #030712 !important; 
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+}
+
+* {
+  font-family: "Outfit", sans-serif;
+  box-sizing: border-box; /* Prevents padding from breaking width */
+  scrollbar-width: thin;
+  scrollbar-color: #312e81 #030712;  
+}
