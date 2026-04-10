@@ -4,6 +4,9 @@ import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { ArrowLeftIcon, CheckIcon, PhotoIcon } from '@heroicons/react/24/outline';
 
+// Dynamic API URL for Production/Development
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+
 const EditIssue = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -20,7 +23,7 @@ const EditIssue = () => {
   useEffect(() => {
     const fetchIssue = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/issues/${id}`);
+        const res = await axios.get(`${API_URL}/issues/${id}`);
         if (res.data.success) {
           setFormData(res.data.data);
           setPreview(res.data.data.image);
@@ -64,7 +67,7 @@ const EditIssue = () => {
       }
 
       const updatedData = { ...formData, image: finalImageUrl };
-      const res = await axios.put(`http://localhost:5000/api/issues/${id}`, updatedData);
+      const res = await axios.put(`${API_URL}/issues/${id}`, updatedData);
 
       if (res.data.success) {
         toast.success("Update Successful!", { id: tid });
@@ -77,7 +80,7 @@ const EditIssue = () => {
     }
   };
 
-  if (loading) return <div className="min-h-screen bg-[#030712] flex items-center justify-center text-[#ff4d6d] font-black italic">LOADING...</div>;
+  if (loading) return <div className="min-h-screen bg-[#030712] flex items-center justify-center text-[#ff4d6d] font-black italic uppercase tracking-tighter animate-pulse">LOADING...</div>;
 
   return (
     <div className="min-h-screen bg-[#030712] text-white pt-28 pb-20 px-6">

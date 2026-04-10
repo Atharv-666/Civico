@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
-// Cleaned up unused icons to prevent import errors
 import { PhotoIcon } from '@heroicons/react/24/outline'; 
+
+// Dynamic API URL for Production/Development
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 
 const Admin = () => {
   const [issues, setIssues] = useState([]);
@@ -10,7 +12,8 @@ const Admin = () => {
 
   const fetchAllIssues = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/issues/all');
+      // Updated to use API_URL
+      const res = await axios.get(`${API_URL}/issues/all`);
       if (res.data.success) {
         setIssues(res.data.data);
       }
@@ -25,7 +28,8 @@ const Admin = () => {
   const handleStatusChange = async (id, newStatus) => {
     const tid = toast.loading("Updating status...");
     try {
-      const res = await axios.patch(`http://localhost:5000/api/issues/status/${id}`, { status: newStatus });
+      // Updated to use API_URL
+      const res = await axios.patch(`${API_URL}/issues/status/${id}`, { status: newStatus });
       if (res.data.success) {
         toast.success(`Marked as ${newStatus}`, { id: tid });
         setIssues(issues.map(iss => iss._id === id ? { ...iss, status: newStatus } : iss));

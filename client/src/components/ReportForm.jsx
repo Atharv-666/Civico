@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // 1. Added Import
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { useUser, SignInButton } from "@clerk/clerk-react";
@@ -14,9 +14,12 @@ import {
   XMarkIcon
 } from '@heroicons/react/24/outline';
 
+// Dynamic API URL for Production/Development
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+
 const ReportForm = () => {
   const { isSignedIn, user } = useUser();
-  const navigate = useNavigate(); // 2. Initialize Navigate
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     title: '',
@@ -79,12 +82,12 @@ const ReportForm = () => {
         userId: user.id 
       };
 
-      const response = await axios.post('http://localhost:5000/api/issues/add', finalData);
+      // UPDATED TO USE API_URL
+      const response = await axios.post(`${API_URL}/issues/add`, finalData);
       
       if (response.data.success) {
         toast.success("Issue Reported Successfully!", { id: toastId });
         
-        // 3. REDIRECT TO REPORTS FEED
         setTimeout(() => {
             navigate('/issues');
         }, 1500);
@@ -101,6 +104,7 @@ const ReportForm = () => {
     }
   };
 
+  // ... (Keep the rest of your JSX exactly as it was)
   if (!isSignedIn) {
     return (
       <div className="min-h-screen bg-[#030712] flex items-center justify-center px-6">
