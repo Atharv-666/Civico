@@ -8,10 +8,10 @@ import {
 const About = () => {
   const team = [
     { id: 1, name: "Atharv" },
-    { id: 2, name: "Team Member 2" },
-    { id: 3, name: "Team Member 3" },
-    { id: 4, name: "Team Member 4" },
-    { id: 5, name: "Team Member 5" },
+    { id: 2, name: "Pavan" },
+    { id: 3, name: "Nandan" },
+    { id: 4, name: "Rohit" },
+    { id: 5, name: "Sahil" },
   ];
 
   return (
@@ -24,15 +24,18 @@ const About = () => {
       <div className="max-w-5xl mx-auto relative z-10">
         
         {/* 1. Our Mission Section */}
-        <section className="text-center mb-16 md:mb-24">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-6 leading-tight">
-            Cleaning up <span className="text-primary">Salokhenagar</span>, <br className="hidden sm:block" /> One Report at a Time.
-          </h1>
-          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-light">
-            We believe that every citizen has the power to improve their neighborhood. 
-            Our platform bridges the gap between residents and authorities.
-          </p>
-        </section>
+       {/* 1. Our Mission Section */}
+<section className="text-center mb-16 md:mb-24">
+  <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-6 leading-tight">
+    Empowering Communities, <br className="hidden sm:block" /> 
+    <span className="text-primary">Driving Real Change.</span>
+  </h1>
+  <p className="text-gray-400 text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-light">
+    Our mission is to transform how citizens interact with their local government. 
+    By providing a transparent, digital platform for reporting civic issues, 
+    we ensure that every voice is heard and every neighborhood gets the attention it deserves.
+  </p>
+</section>
 
         {/* 2. Our Team Section */}
         <section className="mb-16 md:mb-24">
