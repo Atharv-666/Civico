@@ -26,7 +26,7 @@ const CreateIssue = () => {
             Login <span className="text-[#ff4d6d]">Required</span>
           </h2>
           <p className="text-gray-400 mb-10 text-sm font-medium leading-relaxed italic px-4">
-            "Please sign in to report and track civic issues in Salokhenagar."
+            "Please sign in to report and track civic issues "
           </p>
           <SignInButton mode="modal">
             <button className="w-full bg-[#ff4d6d] hover:bg-[#ff3355] text-white py-4 rounded-2xl font-black transition-all shadow-xl shadow-[#ff4d6d]/20 uppercase tracking-widest text-xs">

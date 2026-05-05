@@ -1,9 +1,9 @@
 import Issue from '../models/Issue.js';
 
-// POST: Add a new issue (For ReportForm.jsx)
+// POST: Add a new issue 
 export const createIssue = async (req, res) => {
   try {
-    // Matches the fields from your React form exactly
+
     const newIssue = new Issue(req.body);
     const savedIssue = await newIssue.save();
     res.status(201).json({ success: true, data: savedIssue });
@@ -12,18 +12,18 @@ export const createIssue = async (req, res) => {
   }
 };
 
-// GET: Fetch all issues (To replace dummyData in Issues.jsx)
+// GET: Fetch all issues 
 export const getAllIssues = async (req, res) => {
   try {
-    // Sorts by newest first so the latest reports appear at the top of the feed
-    const issues = await Issue.find().sort({ createdAt: -1 });
+    
+    const issues = await Issue.find().sort({ createdAt: -1 });  // this is for the sorting the issues
     res.status(200).json({ success: true, data: issues });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
 };
 
-// GET: Fetch a single issue by ID (For IssueDetails.jsx)
+// GET: Fetch a single issue by ID 
 export const getIssueById = async (req, res) => {
   try {
     const issue = await Issue.findById(req.params.id);

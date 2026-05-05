@@ -55,7 +55,7 @@ const Admin = () => {
         <header className="mb-10 flex flex-col md:flex-row justify-between items-center gap-4 border-b border-white/5 pb-8">
           <div>
             <h1 className="text-4xl font-black italic uppercase tracking-tighter">Admin <span className="text-[#ff4d6d]">Console</span></h1>
-            <p className="text-gray-500 text-sm font-medium mt-1">Full Oversight of Salokhenagar Issues</p>
+            <p className="text-gray-500 text-sm font-medium mt-1">Full Oversight of  Issues</p>
           </div>
           <div className="bg-white/5 border border-white/10 px-6 py-3 rounded-2xl text-center">
             <span className="block text-2xl font-black text-[#ff4d6d]">{issues.length}</span>

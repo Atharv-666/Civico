@@ -4,11 +4,11 @@ import Issue from '../models/Issue.js';
 
 const router = express.Router();
 
-// --- 1. STATIC/SPECIFIC ROUTES ---
+//  STATIC/SPECIFIC ROUTES 
 router.post('/add', createIssue);
-router.get('/all', getAllIssues);
+router.get('/all', getAllIssues); 
 
-// --- 2. SEMI-SPECIFIC ROUTES (User-specific activity) ---
+
 router.get('/user/:userId', async (req, res) => {
   try {
     const { userId } = req.params;
@@ -19,7 +19,7 @@ router.get('/user/:userId', async (req, res) => {
   }
 });
 
-// --- 3. ADMIN STATUS UPDATE (PATCH) ---
+//  ADMIN STATUS UPDATE (PATCH) 
 router.patch('/status/:id', async (req, res) => {
   try {
     const { status } = req.body;
@@ -35,10 +35,10 @@ router.patch('/status/:id', async (req, res) => {
   }
 });
 
-// --- 4. GENERIC ID ROUTES (MUST BE AT THE BOTTOM) ---
+// GENERIC ID ROUTES 
 router.get('/:id', getIssueById);
 
-// UPDATE ROUTE (Fixes the "Saving..." hang)
+// UPDATE ROUTE 
 router.put('/:id', async (req, res) => {
   try {
     const updatedIssue = await Issue.findByIdAndUpdate(

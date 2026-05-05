@@ -22,11 +22,11 @@ app.use(express.json());
 app.use('/api/issues', issueRoutes);
 
 app.get('/', (req, res) => {
-  res.send('Civico API is live and running! 🚀');
+  res.send('Civico API is live and running! ');
 });
 
 // Port handling for Render
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });

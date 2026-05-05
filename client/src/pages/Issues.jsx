@@ -43,7 +43,7 @@ const Issues = () => {
             COMMUNITY <span className="text-[#ff4d6d]">REPORTS</span>
           </h1>
           <p className="text-gray-400 font-bold uppercase text-[10px] tracking-widest">
-            Salokhenagar Live Activity Feed
+             Live Activity Feed
           </p>
         </header>
 

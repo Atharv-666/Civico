@@ -18,7 +18,7 @@ const HowItWorks = () => {
     {
       id: "02",
       title: "Pin the Location",
-      description: "Our system automatically detects your GPS coordinates or lets you manually drop a pin on Salokhenagar’s map.",
+      description: "pin the exact location of the problem ",
       icon: <MapPinIcon className="size-8" />,
       color: "from-indigo-500 to-purple-500"
     },
