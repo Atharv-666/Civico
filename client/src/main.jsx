@@ -11,7 +11,11 @@ if(!PUBLISHABLE_KEY){
 }
 
 createRoot(document.getElementById('root')).render(
-  <ClerkProvider publishableKey={PUBLISHABLE_KEY} signOutUrl="/">
+  <ClerkProvider 
+    publishableKey={PUBLISHABLE_KEY} 
+    proxyUrl="https://civico-teal.vercel.app/__clerk"
+    signOutUrl="/"
+  >
     <BrowserRouter>
       <App />
     </BrowserRouter>
