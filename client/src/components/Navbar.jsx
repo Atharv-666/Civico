@@ -58,7 +58,7 @@ const Navbar = () => {
           </button>
         ) : (
           <div className="border-2 border-[#64ffda] rounded-full p-0.5 hover:scale-105 transition-transform">
-            <UserButton afterSignOutUrl="/"/>
+            <UserButton signOutUrl="/" />
           </div>
         )}
         
