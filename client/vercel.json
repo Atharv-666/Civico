@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/__clerk/(.*)",
+      "destination": "https://clerk.civico-teal.vercel.app/$1"
     }
   ]
 }
